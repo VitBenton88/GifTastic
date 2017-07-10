@@ -4,3 +4,11 @@ body {
 button {
 	margin: 5px;
 }
+
+#buttonsList {
+	margin-bottom: 40px;
+}
+
+img {
+	margin: 20px;
+}
