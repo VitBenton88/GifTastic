@@ -20,7 +20,7 @@ function gifSwitch(){//function that toggles the gif to opposite state, i.e. sti
 
 function gifGen(){
 	$('button').on("click",function(){//when a button is clicked ...
-		$('.row').empty();//empty rows incase content is there
+		$('.gifBox').empty();//empty rows incase content is there
 		var buttonKeyword = $(this).text();//store button text in var for search keyword in API on next line:
 		var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + buttonKeyword + "&api_key=dc6zaTOxFJmzC&limit=10";//search in API with previously stored keyword
 
@@ -33,7 +33,7 @@ function gifGen(){
 	    			var gifSrc = response.data[i].images.fixed_height_still.url;//capture still URL
 	    			var gifAltSrc = response.data[i].images.fixed_height.url;//capture animated URL
 	    			var gifRating = response.data[i].rating;//capture rating of gif
-	      			$('.row').append("<div class='col-md-3'><img src=" + gifSrc + " data-alt-src=" + gifAltSrc + "><p class='rating'>Rating: " + gifRating + "</p></div>");//append new rows each with an <img> with a src attr that is the still URL and a data-* attr that is the animated URL. Also, print the gif's rating below it in <p>
+	      			$('.gifBox').append("<div class='col-md-6'><img src=" + gifSrc + " data-alt-src=" + gifAltSrc + "><p class='rating'>Rating: " + gifRating + "</p></div>");//append new rows each with an <img> with a src attr that is the still URL and a data-* attr that is the animated URL. Also, print the gif's rating below it in <p>
 	      		};
 	    	});
 	});//function that generates gifs to page when keyword <button> is clicked.
