@@ -1,4 +1,5 @@
 body { 
+	font-family: 'Roboto', sans-serif;
 }
 
 button {
@@ -9,6 +10,13 @@ button {
 	margin-bottom: 40px;
 }
 
-img {
-	margin: 20px;
+.col-md-3 {
+	width: auto;
+	text-align: center;
+}
+
+.rating {
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
 }
