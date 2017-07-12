@@ -1,4 +1,4 @@
-var keywords = ['Austin Powers','This is Spinal Tap','Happy Gilmore','Ace Ventura: Pet Detective','Spaceballs','Finding Nemo','Superbad','The Hangover','Toy Story','The LEGO Movie','Shaun of the Dead','Ghostbusters','Office Space',"Wayne's World",'The Big Lebowski','Zoolander'];
+var topics = ['Austin Powers','This is Spinal Tap','Happy Gilmore','Ace Ventura: Pet Detective','Spaceballs','Finding Nemo','Superbad','The Hangover','Toy Story','The LEGO Movie','Shaun of the Dead','Ghostbusters','Office Space',"Wayne's World",'The Big Lebowski','Zoolander'];
 //--------END OF GLOBAL VARIABLES	
 
 function createButton(text){
@@ -6,8 +6,8 @@ function createButton(text){
 };
 
 function ArrayToButtons (){
-	for (i=0; i<keywords.length; i++){
-		createButton(keywords[i]);
+	for (i=0; i<topics.length; i++){
+		createButton(topics[i]);
 	};//function that prints keywords array to DOM in the form of <buttons>
 };
 
@@ -47,8 +47,10 @@ function newButton(){//function for creating a new functional button from the us
 	$('.addButton').click( function(){//when green 'add' button is clicked ...
 		event.preventDefault();//prevent browser from refreshing
 		var newTitle = $('input').val().trim();//capture user input with trim method to clear white space
-		createButton(newTitle);//apply user input to createButton() to create new button
-		gifGen();//generate gifs from which button is clicked
+		topics.push(newTitle);//add new title to topics array
+		$('#buttonsList').empty();//empty section so new buttons can be published
+		ArrayToButtons();//republish buttons with newly submitted buttons
+		gifGen();//generate gifs from which button is clicked (if this isn't here, new buttons won't work)
 		$('form')[0].reset();//clear input to display placeholder text
 	})
 };
