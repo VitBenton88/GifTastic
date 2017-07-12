@@ -46,7 +46,7 @@ function gifGen(){
 function newButton(){//function for creating a new functional button from the user's input
 	$('.addButton').click( function(){//when green 'add' button is clicked ...
 		event.preventDefault();//prevent browser from refreshing
-		var newTitle = $('input').val().trim();//capture user input
+		var newTitle = $('input').val().trim();//capture user input with trim method to clear white space
 		createButton(newTitle);//apply user input to createButton() to create new button
 		gifGen();//generate gifs from which button is clicked
 		$('form')[0].reset();//clear input to display placeholder text
