@@ -1,9 +1,13 @@
 var keywords = ['Austin Powers','This is Spinal Tap','Happy Gilmore','Ace Ventura: Pet Detective','Spaceballs','Finding Nemo','Superbad','The Hangover','Toy Story','The LEGO Movie','Shaun of the Dead','Ghostbusters','Office Space',"Wayne's World",'The Big Lebowski','Zoolander'];
 //--------END OF GLOBAL VARIABLES	
 
-function createButtons (){
+function createButton(text){
+	$('#buttonsList').append('<button type="button" class="btn btn-primary">' + text + '</button>')
+};
+
+function ArrayToButtons (){
 	for (i=0; i<keywords.length; i++){
-		$('#buttonsList').append('<button type="button" class="btn btn-primary">' + keywords[i] + '</button>')
+		createButton(keywords[i]);
 	};//function that prints keywords array to DOM in the form of <buttons>
 };
 
@@ -45,7 +49,7 @@ $(document).ready(function() {
 	console.log('Theme is Comedies');//print to console the theme of the gifs
 
 	//push buttons from a keywords array immediately at .ready
-	createButtons();
+	ArrayToButtons();
 
 	//When the user clicks on a button, the page should grab 10 static, non-animated gif images...
 		//...from the GIPHY API and place them on the page.
