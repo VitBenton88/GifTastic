@@ -2,7 +2,7 @@ var keywords = ['Austin Powers','This is Spinal Tap','Happy Gilmore','Ace Ventur
 //--------END OF GLOBAL VARIABLES	
 
 function createButton(text){
-	$('#buttonsList').append('<button type="button" class="btn btn-primary">' + text + '</button>')
+	$('#buttonsList').append('<button type="button" class="btn btn-primary buttonList">' + text + '</button>')
 };
 
 function ArrayToButtons (){
@@ -23,7 +23,7 @@ function gifSwitch(){//function that toggles the gif to opposite state, i.e. sti
 };
 
 function gifGen(){
-	$('button').on("click",function(){//when a button is clicked ...
+	$('.buttonList').on("click",function(){//when a button is clicked ...
 		$('.gifBox').empty();//empty rows incase content is there
 		var buttonKeyword = $(this).text();//store button text in var for search keyword in API on next line:
 		var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + buttonKeyword + "&api_key=dc6zaTOxFJmzC&limit=10";//search in API with previously stored keyword
