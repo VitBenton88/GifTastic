@@ -2,12 +2,12 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
-button {
+.buttonList {
 	margin: 5px;
 }
 
 #buttonsList {
-	margin-bottom: 40px;
+	margin-bottom: 25px;
 }
 
 .col-md-6 {
@@ -19,4 +19,12 @@ button {
 	text-align: center;
 	font-weight: bold;
 	font-size: 18px;
+}
+
+form {
+	margin-bottom: 20px;
+}
+
+.addButton {
+	margin: 0 0 0 0;
 }

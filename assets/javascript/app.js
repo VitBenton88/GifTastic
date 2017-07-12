@@ -23,7 +23,7 @@ function gifSwitch(){//function that toggles the gif to opposite state, i.e. sti
 };
 
 function gifGen(){
-	$('.buttonList').on("click",function(){//when a button is clicked ...
+	$('.buttonList').on('click',function(){//when a button is clicked ...
 		$('.gifBox').empty();//empty rows incase content is there
 		var buttonKeyword = $(this).text();//store button text in var for search keyword in API on next line:
 		var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + buttonKeyword + "&api_key=dc6zaTOxFJmzC&limit=10";//search in API with previously stored keyword
@@ -42,6 +42,16 @@ function gifGen(){
 	    	});
 	});//function that generates gifs to page when keyword <button> is clicked.
 };
+
+function newButton(){//function for creating a new functional button from the user's input
+	$('.addButton').click( function(){//when green 'add' button is clicked ...
+		event.preventDefault();//prevent browser from refreshing
+		var newTitle = $('input').val().trim();//capture user input
+		createButton(newTitle);//apply user input to createButton() to create new button
+		gifGen();//generate gifs from which button is clicked
+		$('form')[0].reset();//clear input to display placeholder text
+	})
+};
 	
 	//--------END OF GLOBAL FUNCTIONS
 
@@ -59,6 +69,8 @@ $(document).ready(function() {
 		//...If the user clicks the gif again, it should stop playing.
 	gifSwitch();
 
+		//When user adds a new title for a button, add new button to current list of buttons
+	newButton();
 
 	//----------------------------------------------------------------END OF SCRIPT	
 });
