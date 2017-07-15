@@ -28,3 +28,7 @@ form {
 .addButton {
 	margin: 0 0 0 0;
 }
+
+img {
+	box-shadow: 3px 3px 5px #888888;
+}

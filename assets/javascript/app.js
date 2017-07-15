@@ -76,8 +76,6 @@ $(document).ready(function() {
 		//...If the user clicks the gif again, it should stop playing.
 	gifSwitch();
 
-		//When user adds a new title for a button, add new button to current list of buttons
-
 	//When user adds a new title for a button, add new button to current list of buttons:
 	newButton();
 
