@@ -31,4 +31,10 @@ form {
 
 img {
 	box-shadow: 3px 3px 5px #888888;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+img:hover {
+	box-shadow: 5px 5px 7px #888888;
 }
